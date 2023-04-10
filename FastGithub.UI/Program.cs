@@ -17,6 +17,7 @@ namespace FastGithub.UI
         [STAThread]
         static void Main(string[] args)
         {
+            //自定义加载指定目录的程序集
             AppDomain.CurrentDomain.AssemblyResolve += OnAssemblyResolve;
             using var mutex = new Mutex(true, MUTEX_NAME, out var isFirstInstance);
             if (isFirstInstance == false)
